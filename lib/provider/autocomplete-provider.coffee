@@ -10,7 +10,7 @@ class AutocompleteProvider extends AbstractProvider
 
   # Required: Return a promise, an array of suggestions, or null.
   fetchSuggestions: ({editor, bufferPosition, scopeDescriptor, prefix}) ->
-    @regex = /([^\s=:])+\.([a-zA-Z])*/
+    @regex = /(([^\s=:]+\.)|[@])([a-zA-Z])*/
 
     prefix = @getPrefix(editor, bufferPosition)
     return unless prefix
