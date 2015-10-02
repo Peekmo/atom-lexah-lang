@@ -1,117 +1,117 @@
-'name': 'Raxe'
-'scopeName': 'source.rx'
+'name': 'Lexah'
+'scopeName': 'source.lxa'
 'fileTypes': [
-  'rx'
+  'lxa'
 ]
-'firstLineMatch': '^#!\\s*/.*\\braxe'
+'firstLineMatch': '^#!\\s*/.*\\blexah'
 'patterns': [
   {
     'captures':
       '1':
-        'name': 'keyword.control.class.raxe'
+        'name': 'keyword.control.class.lexah'
       '2':
-        'name': 'entity.name.type.class.raxe'
+        'name': 'entity.name.type.class.lexah'
       '4':
-        'name': 'entity.other.inherited-class.raxe'
+        'name': 'entity.other.inherited-class.lexah'
       '5':
-        'name': 'punctuation.separator.inheritance.raxe'
+        'name': 'punctuation.separator.inheritance.lexah'
       '6':
-        'name': 'variable.other.object.raxe'
+        'name': 'variable.other.object.lexah'
       '7':
-        'name': 'punctuation.definition.variable.raxe'
+        'name': 'punctuation.definition.variable.lexah'
     'match': '^\\s*(class)\\s+(([.a-zA-Z0-9_:]+(\\s*(<)\\s*[.a-zA-Z0-9_:]+)?)|((<<)\\s*[.a-zA-Z0-9_:]+))'
-    'name': 'meta.class.raxe'
+    'name': 'meta.class.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'keyword.control.module.raxe'
+        'name': 'keyword.control.module.lexah'
       '2':
-        'name': 'entity.name.type.module.raxe'
+        'name': 'entity.name.type.module.lexah'
       '3':
-        'name': 'entity.other.inherited-class.module.first.raxe'
+        'name': 'entity.other.inherited-class.module.first.lexah'
       '4':
-        'name': 'punctuation.separator.inheritance.raxe'
+        'name': 'punctuation.separator.inheritance.lexah'
       '5':
-        'name': 'entity.other.inherited-class.module.second.raxe'
+        'name': 'entity.other.inherited-class.module.second.lexah'
       '6':
-        'name': 'punctuation.separator.inheritance.raxe'
+        'name': 'punctuation.separator.inheritance.lexah'
       '7':
-        'name': 'entity.other.inherited-class.module.third.raxe'
+        'name': 'entity.other.inherited-class.module.third.lexah'
       '8':
-        'name': 'punctuation.separator.inheritance.raxe'
+        'name': 'punctuation.separator.inheritance.lexah'
     'match': '^\\s*(module)\\s+(([A-Z]\\w*(::))?([A-Z]\\w*(::))?([A-Z]\\w*(::))*[A-Z]\\w*)'
-    'name': 'meta.module.raxe'
+    'name': 'meta.module.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.constant.hashkey.raxe'
+        'name': 'punctuation.definition.constant.hashkey.lexah'
     'comment': 'symbols as hash key (1.9 syntax)'
     'match': '(?>[a-zA-Z_]\\w*(?>[?!])?)(:)(?!:)'
-    'name': 'constant.other.symbol.hashkey.raxe'
+    'name': 'constant.other.symbol.hashkey.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.constant.raxe'
+        'name': 'punctuation.definition.constant.lexah'
     'comment': 'symbols as hash key (1.8 syntax)'
     'match': '(?<!:)(:)(?>[a-zA-Z_]\\w*(?>[?!])?)(?=\\s*=>)'
-    'name': 'constant.other.symbol.hashkey.raxe'
+    'name': 'constant.other.symbol.hashkey.lexah'
   }
   {
     'comment': 'everything being a reserved word, not a value and needing a \'end\' is a..'
-    'match': '(?<!\\.)\\b(BEGIN|try|case|class|interface|enum|abstract|else|elsif|catch|END|end|ensure|for|if|in|module|then|unless|until|when|while)\\b(?![?!])'
-    'name': 'keyword.control.raxe'
+    'match': '(?<!\\.)\\b(BEGIN|begin|case|class|interface|enum|abstract|else|elsif|rescue|END|end|ensure|for|if|in|module|then|unless|until|when|while)\\b(?![?!])'
+    'name': 'keyword.control.lexah'
   }
   {
     'comment': 'contextual smart pair support for block parameters'
     'match': '(?<!\\.)\\bdo\\b\\s*'
-    'name': 'keyword.control.start-block.raxe'
+    'name': 'keyword.control.start-block.lexah'
   }
   {
     'comment': 'contextual smart pair support'
     'match': '(?<=\\{)(\\s+)'
-    'name': 'meta.syntax.raxe.start-block'
+    'name': 'meta.syntax.lexah.start-block'
   }
   {
     'comment': ' as above, just doesn\'t need a \'end\' and does a logic operation'
     'match': '(?<!\\.)\\b(and|not|or)\\b'
-    'name': 'keyword.operator.logical.raxe'
+    'name': 'keyword.operator.logical.lexah'
   }
   {
     'comment': ' just as above but being not a logical operation'
     'match': '(?<!\\.)\\b(alias|alias_method|break|next|redo|retry|return|super|undef|yield)\\b(?![?!])|\\bdefined\\?|\\bblock_given\\?'
-    'name': 'keyword.control.pseudo-method.raxe'
+    'name': 'keyword.control.pseudo-method.lexah'
   }
   {
     'match': '\\bnil\\b(?![?!])'
-    'name': 'constant.language.nil.raxe'
+    'name': 'constant.language.nil.lexah'
   }
   {
     'match': '\\b(true|false)\\b(?![?!])'
-    'name': 'constant.language.boolean.raxe'
+    'name': 'constant.language.boolean.lexah'
   }
   {
     'match': '\\b(__(FILE|LINE)__)\\b(?![?!])'
-    'name': 'variable.language.raxe'
+    'name': 'variable.language.lexah'
   }
   {
     'match': '\\bself\\b(?![?!])'
-    'name': 'variable.language.self.raxe'
+    'name': 'variable.language.self.lexah'
   }
   {
     'comment': ' everything being a method but having a special function is a..'
-    'match': '\\b(initialize|new|loop|include|extend|prepend|fail|attr_reader|attr_writer|attr_accessor|attr|throw|private|module_function|public|override|inline|fixed)\\b(?![?!])'
-    'name': 'keyword.other.special-method.raxe'
+    'match': '\\b(initialize|new|loop|include|extend|prepend|fail|attr_reader|attr_writer|attr_accessor|attr|raise|private|module_function|public|override|inline|fixed)\\b(?![?!])'
+    'name': 'keyword.other.special-method.lexah'
   }
   {
     'begin': '\\b(?<!\\.|::)(require|require_relative|gem)\\b'
     'captures':
       '1':
-        'name': 'keyword.other.special-method.raxe'
+        'name': 'keyword.other.special-method.lexah'
     'end': '$|(?=#|\\})'
-    'name': 'meta.require.raxe'
+    'name': 'meta.require.lexah'
     'patterns': [
       {
         'include': '$self'
@@ -121,38 +121,38 @@
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.variable.raxe'
+        'name': 'punctuation.definition.variable.lexah'
     'match': '(@)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.instance.raxe'
+    'name': 'variable.other.readwrite.instance.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.variable.raxe'
+        'name': 'punctuation.definition.variable.lexah'
     'match': '(@@)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.class.raxe'
+    'name': 'variable.other.readwrite.class.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.variable.raxe'
+        'name': 'punctuation.definition.variable.lexah'
     'match': '(\\$)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.global.raxe'
+    'name': 'variable.other.readwrite.global.lexah'
   }
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.variable.raxe'
+        'name': 'punctuation.definition.variable.lexah'
     'match': '(\\$)(!|@|&|`|\'|\\+|\\d+|~|=|/|\\\\|,|;|\\.|<|>|_|\\*|\\$|\\?|:|"|-[0adFiIlpv])'
-    'name': 'variable.other.readwrite.global.pre-defined.raxe'
+    'name': 'variable.other.readwrite.global.pre-defined.lexah'
   }
   {
     'begin': '\\b(ENV)\\['
     'beginCaptures':
       '1':
-        'name': 'variable.other.constant.raxe'
+        'name': 'variable.other.constant.lexah'
     'end': '\\]'
-    'name': 'meta.environment-variable.raxe'
+    'name': 'meta.environment-variable.lexah'
     'patterns': [
       {
         'include': '$self'
@@ -161,31 +161,31 @@
   }
   {
     'match': '\\b[A-Z]\\w*(?=((\\.|::)[A-Za-z]|\\[))'
-    'name': 'support.class.raxe'
+    'name': 'support.class.lexah'
   }
   {
-    'match': '\\b(abort|at_exit|autoload\\??|binding|callcc|caller|caller_locations|chomp|chop|eval|exec|exit|exit!|fork|format|gets|global_variables|gsub|iterator\\?|lambda|load|local_variables|open|p|print|printf|proc|putc|trace|rand|readline|readlines|select|set_trace_func|sleep|spawn|sprintf|srand|sub|syscall|system|test|trace_var|trap|untrace_var|warn)\\b(?![?!])'
-    'name': 'support.function.kernel.raxe'
+    'match': '\\b(abort|at_exit|autoload\\??|binding|callcc|caller|caller_locations|chomp|chop|eval|exec|exit|exit!|fork|format|gets|global_variables|gsub|iterator\\?|lambda|load|local_variables|open|p|print|printf|proc|putc|puts|rand|readline|readlines|select|set_trace_func|sleep|spawn|sprintf|srand|sub|syscall|system|test|trace_var|trap|untrace_var|warn)\\b(?![?!])'
+    'name': 'support.function.kernel.lexah'
   }
   {
     'match': '\\b[A-Z]\\w*\\b'
-    'name': 'variable.other.constant.raxe'
+    'name': 'variable.other.constant.lexah'
   }
   {
     'begin': '(?x)\n\t\t\t         (?=def\\b)                                                      # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\s+                                              # the def keyword\n\t\t\t         ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                   # a method name prefix\n\t\t\t           (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                              # the method name\n\t\t\t           |===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )  # …or an operator method\n\t\t\t         \\s*(\\()                                                        # the openning parenthesis for arguments\n\t\t\t        '
     'beginCaptures':
       '1':
-        'name': 'keyword.control.def.raxe'
+        'name': 'keyword.control.def.lexah'
       '2':
-        'name': 'entity.name.function.raxe'
+        'name': 'entity.name.function.lexah'
       '3':
-        'name': 'punctuation.definition.parameters.raxe'
+        'name': 'punctuation.definition.parameters.lexah'
     'comment': 'The method pattern comes from the symbol pattern. See there for an explanation.'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.parameters.raxe'
-    'name': 'meta.function.method.with-arguments.raxe'
+        'name': 'punctuation.definition.parameters.lexah'
+    'name': 'meta.function.method.with-arguments.lexah'
     'patterns': [
       {
         'begin': '(?![\\s,)])'
@@ -194,9 +194,9 @@
           {
             'captures':
               '1':
-                'name': 'storage.type.variable.raxe'
+                'name': 'storage.type.variable.lexah'
               '2':
-                'name': 'variable.parameter.function.raxe'
+                'name': 'variable.parameter.function.lexah'
             'match': '\\G([&*]?)([_a-zA-Z][_a-zA-Z0-9]*)'
           }
           {
@@ -210,12 +210,12 @@
     'begin': '(?x)\n\t\t\t         (?=def\\b)                                                      # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\s+                                              # the def keyword\n\t\t\t         ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                   # a method name prefix\n\t\t\t           (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                              # the method name\n\t\t\t           |===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) )  # …or an operator method\n\t\t\t         [ \\t]                                                          # the space separating the arguments\n\t\t\t         (?=[ \\t]*[^\\s#;])                                              # make sure arguments and not a comment follow\n\t\t\t        '
     'beginCaptures':
       '1':
-        'name': 'keyword.control.def.raxe'
+        'name': 'keyword.control.def.lexah'
       '2':
-        'name': 'entity.name.function.raxe'
+        'name': 'entity.name.function.lexah'
     'comment': 'same as the previous rule, but without parentheses around the arguments'
     'end': '$'
-    'name': 'meta.function.method.with-arguments.raxe'
+    'name': 'meta.function.method.with-arguments.lexah'
     'patterns': [
       {
         'begin': '(?![\\s,])'
@@ -224,9 +224,9 @@
           {
             'captures':
               '1':
-                'name': 'punctuation.definition.variable.raxe'
+                'name': 'punctuation.definition.variable.lexah'
             'match': '\\G([&*]?)[_a-zA-Z][_a-zA-Z0-9]*'
-            'name': 'variable.parameter.function.raxe'
+            'name': 'variable.parameter.function.lexah'
           }
           {
             'include': '$self'
@@ -238,32 +238,32 @@
   {
     'captures':
       '1':
-        'name': 'keyword.control.def.raxe'
+        'name': 'keyword.control.def.lexah'
       '3':
-        'name': 'entity.name.function.raxe'
+        'name': 'entity.name.function.lexah'
     'comment': ' the optional name is just to catch the def also without a method-name'
     'match': '(?x)\n\t\t\t         (?=def\\b)                                                           # an optimization to help Oniguruma fail fast\n\t\t\t         (?<=^|\\s)(def)\\b                                                    # the def keyword\n\t\t\t         ( \\s+                                                               # an optional group of whitespace followed by…\n\t\t\t           ( (?>[a-zA-Z_]\\w*(?>\\.|::))?                                      # a method name prefix\n\t\t\t             (?>[a-zA-Z_]\\w*(?>[?!]|=(?!>))?                                 # the method name\n\t\t\t             |===?|!=|>[>=]?|<=>|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?) ) )?  # …or an operator method\n\t\t\t        '
-    'name': 'meta.function.method.without-arguments.raxe'
+    'name': 'meta.function.method.without-arguments.lexah'
   }
   {
     'match': '\\b(0[xX]\\h(?>_?\\h)*|\\d(?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0[bB][01]+)\\b'
-    'name': 'constant.numeric.raxe'
+    'name': 'constant.numeric.lexah'
   }
   {
     'begin': ':\''
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': "symbol literal with '' delimitor"
     'end': '\''
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\[\'\\\\]'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
     ]
   }
@@ -271,13 +271,13 @@
     'begin': ':"'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.symbol.begin.raxe'
+        'name': 'punctuation.section.symbol.begin.lexah'
     'comment': 'symbol literal with "" delimitor'
     'end': '"'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.symbol.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.symbol.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_raxe'
@@ -290,23 +290,23 @@
   {
     'comment': 'Needs higher precidence than regular expressions.'
     'match': '(?<!\\()/='
-    'name': 'keyword.operator.assignment.augmented.raxe'
+    'name': 'keyword.operator.assignment.augmented.lexah'
   }
   {
     'begin': '\''
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': "string literal with '' delimitor"
     'end': '\''
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.single.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.single.lexah'
     'patterns': [
       {
         'match': '\\\\\'|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
     ]
   }
@@ -314,13 +314,13 @@
     'begin': '"'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and "" delimitor'
     'end': '"'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.double.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.double.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -334,13 +334,13 @@
     'begin': '`'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allows for interpolation)'
     'end': '`'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -354,13 +354,13 @@
     'begin': '%x\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allow for interpolation)'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -377,13 +377,13 @@
     'begin': '%x\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allow for interpolation)'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -400,13 +400,13 @@
     'begin': '%x\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allow for interpolation)'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -423,13 +423,13 @@
     'begin': '%x\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allow for interpolation)'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -446,13 +446,13 @@
     'begin': '%x([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'execute string (allow for interpolation)'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -466,11 +466,11 @@
     'begin': '(?<![\\w)])((/))(?![*+?])(?=(?:\\\\/|[^/])*/[eimnosux]*\\s*([\\]#).,?:}]|$|\\|\\||&&|<=>|=>|==|=~|!~|!=|;|if|else|elsif|then|do|end|unless|while|until|or|and))'
     'captures':
       '1':
-        'name': 'string.regexp.interpolated.raxe'
+        'name': 'string.regexp.interpolated.lexah'
       '2':
-        'name': 'punctuation.section.regexp.raxe'
+        'name': 'punctuation.section.regexp.lexah'
     'comment': 'regular expression literal with interpolation'
-    'contentName': 'string.regexp.interpolated.raxe'
+    'contentName': 'string.regexp.interpolated.lexah'
     'end': '((/[eimnosux]*))(?=[^eimnosux])'
     'patterns': [
       {
@@ -482,13 +482,13 @@
     'begin': '%r\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.regexp.begin.raxe'
+        'name': 'punctuation.section.regexp.begin.lexah'
     'comment': 'regular expression literal with interpolation and {} delimitor'
     'end': '\\}[eimnosux]*'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.regexp.end.raxe'
-    'name': 'string.regexp.interpolated.raxe'
+        'name': 'punctuation.section.regexp.end.lexah'
+    'name': 'string.regexp.interpolated.lexah'
     'patterns': [
       {
         'include': '#regex_sub'
@@ -502,13 +502,13 @@
     'begin': '%r\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.regexp.begin.raxe'
+        'name': 'punctuation.section.regexp.begin.lexah'
     'comment': 'regular expression literal with interpolation and [] delimitor'
     'end': '\\][eimnosux]*'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.regexp.end.raxe'
-    'name': 'string.regexp.interpolated.raxe'
+        'name': 'punctuation.section.regexp.end.lexah'
+    'name': 'string.regexp.interpolated.lexah'
     'patterns': [
       {
         'include': '#regex_sub'
@@ -522,13 +522,13 @@
     'begin': '%r\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.regexp.begin.raxe'
+        'name': 'punctuation.section.regexp.begin.lexah'
     'comment': 'regular expression literal with interpolation and () delimitor'
     'end': '\\)[eimnosux]*'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.regexp.end.raxe'
-    'name': 'string.regexp.interpolated.raxe'
+        'name': 'punctuation.section.regexp.end.lexah'
+    'name': 'string.regexp.interpolated.lexah'
     'patterns': [
       {
         'include': '#regex_sub'
@@ -542,13 +542,13 @@
     'begin': '%r\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.regexp.begin.raxe'
+        'name': 'punctuation.section.regexp.begin.lexah'
     'comment': 'regular expression literal with interpolation and <> delimitor'
     'end': '\\>[eimnosux]*'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.regexp.end.raxe'
-    'name': 'string.regexp.interpolated.raxe'
+        'name': 'punctuation.section.regexp.end.lexah'
+    'name': 'string.regexp.interpolated.lexah'
     'patterns': [
       {
         'include': '#regex_sub'
@@ -562,13 +562,13 @@
     'begin': '%r([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.regexp.begin.raxe'
+        'name': 'punctuation.section.regexp.begin.lexah'
     'comment': 'regular expression literal with interpolation and {} delimitor'
     'end': '\\1[eimnosux]*'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.regexp.end.raxe'
-    'name': 'string.regexp.interpolated.raxe'
+        'name': 'punctuation.section.regexp.end.lexah'
+    'name': 'string.regexp.interpolated.lexah'
     'patterns': [
       {
         'include': '#regex_sub'
@@ -579,13 +579,13 @@
     'begin': '%I\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with interpolation and [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -602,13 +602,13 @@
     'begin': '%I\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with interpolation and () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -625,13 +625,13 @@
     'begin': '%I\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with interpolation and <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -648,13 +648,13 @@
     'begin': '%I\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with interpolation and {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -671,13 +671,13 @@
     'begin': '%I([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with interpolation and wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -691,17 +691,17 @@
     'begin': '%i\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\]|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_brackets'
@@ -712,17 +712,17 @@
     'begin': '%i\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\)|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_parens'
@@ -733,17 +733,17 @@
     'begin': '%i\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\>|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_ltgt'
@@ -754,17 +754,17 @@
     'begin': '%i\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\}|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_curly'
@@ -775,13 +775,13 @@
     'begin': '%i([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of symbols literal with wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'comment': 'Cant be named because its not neccesarily an escape.'
@@ -793,13 +793,13 @@
     'begin': '%W\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with interpolation and [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -816,13 +816,13 @@
     'begin': '%W\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with interpolation and () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -839,13 +839,13 @@
     'begin': '%W\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with interpolation and <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -862,13 +862,13 @@
     'begin': '%W\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with interpolation and {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -885,13 +885,13 @@
     'begin': '%W([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with interpolation and wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -905,17 +905,17 @@
     'begin': '%w\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\]|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_brackets'
@@ -926,17 +926,17 @@
     'begin': '%w\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\)|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_parens'
@@ -947,17 +947,17 @@
     'begin': '%w\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\>|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_ltgt'
@@ -968,17 +968,17 @@
     'begin': '%w\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\}|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_curly'
@@ -989,13 +989,13 @@
     'begin': '%w([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.section.array.begin.raxe'
+        'name': 'punctuation.section.array.begin.lexah'
     'comment': 'array of strings literal with wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.section.array.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.section.array.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'comment': 'Cant be named because its not neccesarily an escape.'
@@ -1007,13 +1007,13 @@
     'begin': '%Q\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1030,13 +1030,13 @@
     'begin': '%Q\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1053,13 +1053,13 @@
     'begin': '%Q\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1076,13 +1076,13 @@
     'begin': '%Q\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1099,13 +1099,13 @@
     'begin': '%Q([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1119,12 +1119,12 @@
     'begin': '%\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1141,12 +1141,12 @@
     'begin': '%\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1163,12 +1163,12 @@
     'begin': '%\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1185,12 +1185,12 @@
     'begin': '%\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1207,13 +1207,13 @@
     'begin': '%([^\\w\\s=])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with interpolation and wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.interpolated.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.interpolated.lexah'
     'patterns': [
       {
         'include': '#interpolated_ruby'
@@ -1227,17 +1227,17 @@
     'begin': '%q\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\)|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_parens'
@@ -1248,17 +1248,17 @@
     'begin': '%q\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\>|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_ltgt'
@@ -1269,17 +1269,17 @@
     'begin': '%q\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\]|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_brackets'
@@ -1290,17 +1290,17 @@
     'begin': '%q\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'match': '\\\\\\}|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_curly'
@@ -1311,13 +1311,13 @@
     'begin': '%q([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'string literal with wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.quoted.other.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.quoted.other.lexah'
     'patterns': [
       {
         'comment': 'Cant be named because its not neccesarily an escape.'
@@ -1329,17 +1329,17 @@
     'begin': '%s\\('
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': 'symbol literal with () delimitor'
     'end': '\\)'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\)|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_parens'
@@ -1350,17 +1350,17 @@
     'begin': '%s\\<'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': 'symbol literal with <> delimitor'
     'end': '\\>'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\>|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_ltgt'
@@ -1371,17 +1371,17 @@
     'begin': '%s\\['
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': 'symbol literal with [] delimitor'
     'end': '\\]'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\]|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_brackets'
@@ -1392,17 +1392,17 @@
     'begin': '%s\\{'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': 'symbol literal with {} delimitor'
     'end': '\\}'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'match': '\\\\\\}|\\\\\\\\'
-        'name': 'constant.character.escape.raxe'
+        'name': 'constant.character.escape.lexah'
       }
       {
         'include': '#nest_curly'
@@ -1413,13 +1413,13 @@
     'begin': '%s([^\\w])'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.begin.raxe'
+        'name': 'punctuation.definition.symbol.begin.lexah'
     'comment': 'symbol literal with wildcard delimitor'
     'end': '\\1'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.symbol.end.raxe'
-    'name': 'constant.other.symbol.raxe'
+        'name': 'punctuation.definition.symbol.end.lexah'
+    'name': 'constant.other.symbol.lexah'
     'patterns': [
       {
         'comment': 'Cant be named because its not neccesarily an escape.'
@@ -1430,34 +1430,34 @@
   {
     'captures':
       '1':
-        'name': 'punctuation.definition.constant.raxe'
+        'name': 'punctuation.definition.constant.lexah'
     'comment': 'symbols'
     'match': '(?<!:)(:)(?>[$a-zA-Z_]\\w*(?>[?!]|=(?![>=]))?|===?|<=>|>[>=]?|<[<=]?|[%&`/\\|]|\\*\\*?|=?~|[-+]@?|\\[\\]=?|@@?[a-zA-Z_]\\w*)'
-    'name': 'constant.other.symbol.raxe'
+    'name': 'constant.other.symbol.lexah'
   }
   {
-    'begin': '^[\\s]*---'
+    'begin': '^[\\s]*--\\*'
     'captures':
       '0':
-        'name': 'punctuation.definition.comment.raxe'
+        'name': 'punctuation.definition.comment.lexah'
     'comment': 'multiline comments'
-    'end': '^[\\s]*---'
-    'name': 'comment.block.documentation.raxe'
+    'end': '^[\\s]*\\*--'
+    'name': 'comment.block.documentation.lexah'
   }
   {
     'begin': '(^[ \\t]+)?(?=--)'
     'beginCaptures':
       '1':
-        'name': 'punctuation.whitespace.comment.leading.raxe'
+        'name': 'punctuation.whitespace.comment.leading.lexah'
     'end': '(?!\\G)'
     'patterns': [
       {
-        'begin': '--'
+        'begin': '---'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.comment.raxe'
+            'name': 'punctuation.definition.comment.lexah'
         'end': '\\n'
-        'name': 'comment.line.number-sign.raxe'
+        'name': 'comment.line.number-sign.lexah'
         'patterns': [
           {
             'include': '--yard'
@@ -1469,13 +1469,13 @@
   {
     'comment': '\n\t\t\tmatches questionmark-letters.\n\n\t\t\texamples (1st alternation = hex):\n\t\t\t?\\x1     ?\\x61\n\n\t\t\texamples (2nd alternation = octal):\n\t\t\t?\\0      ?\\07     ?\\017\n\n\t\t\texamples (3rd alternation = escaped):\n\t\t\t?\\n      ?\\b\n\n\t\t\texamples (4th alternation = meta-ctrl):\n\t\t\t?\\C-a    ?\\M-a    ?\\C-\\M-\\C-\\M-a\n\n\t\t\texamples (4th alternation = normal):\n\t\t\t?a       ?A       ?0 \n\t\t\t?*       ?"       ?( \n\t\t\t?.       ?#\n\t\t\t\n\t\t\t\n\t\t\tthe negative lookbehind prevents against matching\n\t\t\tp(42.tainted?)\n\t\t\t'
     'match': '(?<!\\w)\\?(\\\\(x\\h{1,2}(?!\\h)\\b|0[0-7]{0,2}(?![0-7])\\b|[^x0MC])|(\\\\[MC]-)+\\w|[^\\s\\\\])'
-    'name': 'constant.numeric.raxe'
+    'name': 'constant.numeric.lexah'
   }
   {
     'begin': '^__END__\\n'
     'captures':
       '0':
-        'name': 'string.unquoted.program-block.raxe'
+        'name': 'string.unquoted.program-block.lexah'
     'comment': '__END__ marker'
     'contentName': 'text.plain'
     'end': '(?=not)impossible'
@@ -1483,7 +1483,7 @@
       {
         'begin': '(?=<?xml|<(?i:html\\b)|!DOCTYPE (?i:html\\b))'
         'end': '(?=not)impossible'
-        'name': 'text.html.embedded.raxe'
+        'name': 'text.html.embedded.lexah'
         'patterns': [
           {
             'include': 'text.html.basic'
@@ -1502,13 +1502,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)HTML)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'text.html'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1536,13 +1536,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)SQL)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.sql'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1570,13 +1570,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)CSS)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.css'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1604,13 +1604,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)CPP)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.cpp'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1645,13 +1645,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)C)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.c'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1679,13 +1679,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)(?:JS|JAVASCRIPT))\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.js'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1713,13 +1713,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)JQUERY)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.js.jquery'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1747,13 +1747,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)(?:SH|SHELL))\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.shell'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1781,13 +1781,13 @@
         'begin': '(?><<-("?)((?:[_\\w]+_|)LUA)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
         'contentName': 'source.lua'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1809,19 +1809,19 @@
     'begin': '(?=(?><<-("?)((?:[_\\w]+_|)RUBY)\\b\\1))'
     'comment': 'Heredoc with embedded raxe'
     'end': '(?!\\G)'
-    'name': 'meta.embedded.block.raxe'
+    'name': 'meta.embedded.block.lexah'
     'patterns': [
       {
         'begin': '(?><<-("?)((?:[_\\w]+_|)RUBY)\\b\\1)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.string.begin.raxe'
-        'contentName': 'source.raxe'
+            'name': 'punctuation.definition.string.begin.lexah'
+        'contentName': 'source.lexah'
         'end': '\\s*\\2$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.string.end.raxe'
-        'name': 'string.unquoted.heredoc.raxe'
+            'name': 'punctuation.definition.string.end.lexah'
+        'name': 'string.unquoted.heredoc.lexah'
         'patterns': [
           {
             'include': '#heredoc'
@@ -1830,7 +1830,7 @@
             'include': '#interpolated_ruby'
           }
           {
-            'include': 'source.raxe'
+            'include': 'source.lexah'
           }
           {
             'include': '#escaped_char'
@@ -1843,12 +1843,12 @@
     'begin': '(?>\\=\\s*<<(\\w+))'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'end': '^\\1$'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.unquoted.heredoc.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.unquoted.heredoc.lexah'
     'patterns': [
       {
         'include': '#heredoc'
@@ -1865,13 +1865,13 @@
     'begin': '(?><<-(\\w+))'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.raxe'
+        'name': 'punctuation.definition.string.begin.lexah'
     'comment': 'heredoc with indented terminator'
     'end': '\\s*\\1$'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.raxe'
-    'name': 'string.unquoted.heredoc.raxe'
+        'name': 'punctuation.definition.string.end.lexah'
+    'name': 'string.unquoted.heredoc.lexah'
     'patterns': [
       {
         'include': '#heredoc'
@@ -1888,16 +1888,16 @@
     'begin': '(?<=\\{|do|\\{\\s|do\\s)(\\|)'
     'captures':
       '1':
-        'name': 'punctuation.separator.variable.raxe'
+        'name': 'punctuation.separator.variable.lexah'
     'end': '(\\|)'
     'patterns': [
       {
         'match': '[_a-zA-Z][_a-zA-Z0-9]*'
-        'name': 'variable.other.block.raxe'
+        'name': 'variable.other.block.lexah'
       }
       {
         'match': ','
-        'name': 'punctuation.separator.variable.raxe'
+        'name': 'punctuation.separator.variable.lexah'
       }
     ]
   }
@@ -1907,80 +1907,80 @@
   }
   {
     'match': '<<=|%=|&{1,2}=|\\*=|\\*\\*=|\\+=|\\-=|\\^=|\\|{1,2}=|<<'
-    'name': 'keyword.operator.assignment.augmented.raxe'
+    'name': 'keyword.operator.assignment.augmented.lexah'
   }
   {
     'match': '<=>|<(?!<|=)|>(?!<|=|>)|<=|>=|===|==|=~|!=|!~|(?<=[ \\t])\\?'
-    'name': 'keyword.operator.comparison.raxe'
+    'name': 'keyword.operator.comparison.lexah'
   }
   {
     'match': '(?<=[ \\t])!+|\\bnot\\b|&&|\\band\\b|\\|\\||\\bor\\b|\\^'
-    'name': 'keyword.operator.logical.raxe'
+    'name': 'keyword.operator.logical.lexah'
   }
   {
     'match': '(%|&|\\*\\*|\\*|\\+|\\-|/)'
-    'name': 'keyword.operator.arithmetic.raxe'
+    'name': 'keyword.operator.arithmetic.lexah'
   }
   {
     'match': '='
-    'name': 'keyword.operator.assignment.raxe'
+    'name': 'keyword.operator.assignment.lexah'
   }
   {
     'match': '\\||~|>>'
-    'name': 'keyword.operator.other.raxe'
+    'name': 'keyword.operator.other.lexah'
   }
   {
     'match': '\\;'
-    'name': 'punctuation.separator.statement.raxe'
+    'name': 'punctuation.separator.statement.lexah'
   }
   {
     'match': ','
-    'name': 'punctuation.separator.object.raxe'
+    'name': 'punctuation.separator.object.lexah'
   }
   {
     'comment': 'Mark as namespace separator if double colons followed by capital letter'
     'match': '(::)\\s*(?=[A-Z])'
     'captures':
       '1':
-        'name': 'punctuation.separator.namespace.raxe'
+        'name': 'punctuation.separator.namespace.lexah'
   }
   {
     'comment': 'Mark as method separator if double colons not followed by capital letter'
     'match': '(\\.|::)\\s*(?![A-Z])'
     'captures':
       '1':
-        'name': 'punctuation.separator.method.raxe'
+        'name': 'punctuation.separator.method.lexah'
   }
   {
     'comment': 'Must come after method and constant separators to prefer double colons'
     'match': ':'
-    'name': 'punctuation.separator.other.raxe'
+    'name': 'punctuation.separator.other.lexah'
   }
   {
     'match': '\\{'
-    'name': 'punctuation.section.scope.begin.raxe'
+    'name': 'punctuation.section.scope.begin.lexah'
   }
   {
     'match': '\\}'
-    'name': 'punctuation.section.scope.end.raxe'
+    'name': 'punctuation.section.scope.end.lexah'
   }
   {
     'match': '\\['
-    'name': 'punctuation.section.array.begin.raxe'
+    'name': 'punctuation.section.array.begin.lexah'
   }
   {
     'match': '\\]'
-    'name': 'punctuation.section.array.end.raxe'
+    'name': 'punctuation.section.array.end.lexah'
   }
   {
     'match': '\\(|\\)'
-    'name': 'punctuation.section.function.raxe'
+    'name': 'punctuation.section.function.lexah'
   }
 ]
 'repository':
   'escaped_char':
     'match': '\\\\(?:[0-7]{1,3}|x[\\da-fA-F]{1,2}|.)'
-    'name': 'constant.character.escape.raxe'
+    'name': 'constant.character.escape.lexah'
   'heredoc':
     'begin': '^<<-?\\w+'
     'end': '$'
@@ -1995,17 +1995,17 @@
         'begin': '(#\\{)'
         'beginCaptures':
           '0':
-            'name': 'punctuation.section.embedded.begin.raxe'
+            'name': 'punctuation.section.embedded.begin.lexah'
           '1':
-            'name': 'source.raxe'
-        'contentName': 'source.raxe'
+            'name': 'source.lexah'
+        'contentName': 'source.lexah'
         'end': '(\\})'
         'endCaptures':
           '0':
-            'name': 'punctuation.section.embedded.end.raxe'
+            'name': 'punctuation.section.embedded.end.lexah'
           '1':
-            'name': 'source.raxe'
-        'name': 'meta.embedded.line.raxe'
+            'name': 'source.lexah'
+        'name': 'meta.embedded.line.lexah'
         'patterns': [
           {
             'include': '#nest_curly_and_self'
@@ -2018,30 +2018,30 @@
       {
         'captures':
           '1':
-            'name': 'punctuation.definition.variable.raxe'
+            'name': 'punctuation.definition.variable.lexah'
         'match': '(#@)[a-zA-Z_]\\w*'
-        'name': 'variable.other.readwrite.instance.raxe'
+        'name': 'variable.other.readwrite.instance.lexah'
       }
       {
         'captures':
           '1':
-            'name': 'punctuation.definition.variable.raxe'
+            'name': 'punctuation.definition.variable.lexah'
         'match': '(#@@)[a-zA-Z_]\\w*'
-        'name': 'variable.other.readwrite.class.raxe'
+        'name': 'variable.other.readwrite.class.lexah'
       }
       {
         'captures':
           '1':
-            'name': 'punctuation.definition.variable.raxe'
+            'name': 'punctuation.definition.variable.lexah'
         'match': '(#\\$)[a-zA-Z_]\\w*'
-        'name': 'variable.other.readwrite.global.raxe'
+        'name': 'variable.other.readwrite.global.lexah'
       }
     ]
   'nest_brackets':
     'begin': '\\['
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\]'
     'patterns': [
       {
@@ -2052,7 +2052,7 @@
     'begin': '\\['
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\]'
     'patterns': [
       {
@@ -2069,7 +2069,7 @@
     'begin': '\\['
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\]'
     'patterns': [
       {
@@ -2083,7 +2083,7 @@
     'begin': '\\{'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\}'
     'patterns': [
       {
@@ -2096,7 +2096,7 @@
         'begin': '\\{'
         'captures':
           '0':
-            'name': 'punctuation.section.scope.raxe'
+            'name': 'punctuation.section.scope.lexah'
         'end': '\\}'
         'patterns': [
           {
@@ -2112,7 +2112,7 @@
     'begin': '\\{'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\}'
     'patterns': [
       {
@@ -2129,7 +2129,7 @@
     'begin': '\\{'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\}'
     'patterns': [
       {
@@ -2143,7 +2143,7 @@
     'begin': '\\<'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\>'
     'patterns': [
       {
@@ -2154,7 +2154,7 @@
     'begin': '\\<'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\>'
     'patterns': [
       {
@@ -2171,7 +2171,7 @@
     'begin': '\\<'
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\>'
     'patterns': [
       {
@@ -2185,7 +2185,7 @@
     'begin': '\\('
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\)'
     'patterns': [
       {
@@ -2196,7 +2196,7 @@
     'begin': '\\('
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\)'
     'patterns': [
       {
@@ -2213,7 +2213,7 @@
     'begin': '\\('
     'captures':
       '0':
-        'name': 'punctuation.section.scope.raxe'
+        'name': 'punctuation.section.scope.lexah'
     'end': '\\)'
     'patterns': [
       {
@@ -2234,19 +2234,19 @@
       {
         'captures':
           '1':
-            'name': 'punctuation.definition.arbitrary-repetition.raxe'
+            'name': 'punctuation.definition.arbitrary-repetition.lexah'
           '3':
-            'name': 'punctuation.definition.arbitrary-repetition.raxe'
+            'name': 'punctuation.definition.arbitrary-repetition.lexah'
         'match': '(\\{)\\d+(,\\d+)?(\\})'
-        'name': 'string.regexp.arbitrary-repetition.raxe'
+        'name': 'string.regexp.arbitrary-repetition.lexah'
       }
       {
         'begin': '\\[(?:\\^?\\])?'
         'captures':
           '0':
-            'name': 'punctuation.definition.character-class.raxe'
+            'name': 'punctuation.definition.character-class.lexah'
         'end': '\\]'
-        'name': 'string.regexp.character-class.raxe'
+        'name': 'string.regexp.character-class.lexah'
         'patterns': [
           {
             'include': '#escaped_char'
@@ -2257,12 +2257,12 @@
         'begin': '\\(\\?#'
         'beginCaptures':
           '0':
-            'name': 'punctuation.definition.comment.begin.raxe'
+            'name': 'punctuation.definition.comment.begin.lexah'
         'end': '\\)'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.comment.end.raxe'
-        'name': 'comment.line.number-sign.raxe'
+            'name': 'punctuation.definition.comment.end.lexah'
+        'name': 'comment.line.number-sign.lexah'
         'patterns': [
           {
             'include': '#escaped_char'
@@ -2273,9 +2273,9 @@
         'begin': '\\('
         'captures':
           '0':
-            'name': 'punctuation.definition.group.raxe'
+            'name': 'punctuation.definition.group.lexah'
         'end': '\\)'
-        'name': 'string.regexp.group.raxe'
+        'name': 'string.regexp.group.lexah'
         'patterns': [
           {
             'include': '#regex_sub'
@@ -2286,12 +2286,12 @@
         'begin': '(?<=^|\\s)(#)\\s(?=[[a-zA-Z0-9,. \\t?!-][^\\x{00}-\\x{7F}]]*$)'
         'beginCaptures':
           '1':
-            'name': 'punctuation.definition.comment.raxe'
+            'name': 'punctuation.definition.comment.lexah'
         'comment': 'We are restrictive in what we allow to go after the comment character to avoid false positives, since the availability of comments depend on regexp flags.'
         'end': '$\\n?'
         'endCaptures':
           '0':
-            'name': 'punctuation.definition.comment.raxe'
-        'name': 'comment.line.number-sign.raxe'
+            'name': 'punctuation.definition.comment.lexah'
+        'name': 'comment.line.number-sign.lexah'
       }
     ]

@@ -6,11 +6,11 @@ module.exports =
   ###
   init: () ->
     # See also https://secure.php.net/urlhowto.php .
-    @config['haxe'] = atom.config.get('raxe-lang.haxe')
-    @config['raxe'] = atom.config.get('raxe-lang.raxe')
+    @config['haxe'] = atom.config.get('lexah-lang.haxe')
+    @config['lexah'] = atom.config.get('lexah-lang.lexah')
 
-    atom.config.onDidChange 'raxe-lang.haxe', () =>
+    atom.config.onDidChange 'lexah-lang.haxe', () =>
       @init()
 
-    atom.config.onDidChange 'raxe-lang.raxe', () =>
+    atom.config.onDidChange 'lexah-lang.lexah', () =>
       @init()

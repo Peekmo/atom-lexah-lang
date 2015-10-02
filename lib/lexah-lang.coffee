@@ -6,7 +6,7 @@ AutocompleteProvider = require './provider/autocomplete-provider.coffee'
 VariableProvider = require './provider/variable-provider.coffee'
 
 
-module.exports = RaxeLang =
+module.exports = LexahLang =
   config:
     haxe:
       title: 'Haxe command'
@@ -15,11 +15,11 @@ module.exports = RaxeLang =
       default: 'haxe'
       order: 1
 
-    raxe:
-      title: 'Raxe command'
-      description: 'Command to use raxe CLI'
+    lexah:
+      title: 'Lexah command'
+      description: 'Command to use lexah CLI'
       type: 'string'
-      default: 'haxelib run raxe'
+      default: 'haxelib run lexah'
       order: 2
 
   providers: []
@@ -32,6 +32,6 @@ module.exports = RaxeLang =
 
   deactivate: ->
     proxy.kill()
-    
+
   provide: ->
     return @providers

@@ -7,7 +7,7 @@ currentProcesses = []
 childProcess = null
 
 ###*
- * Executes a command to PHP proxy
+ * Executes a command to LEXAH proxy
  * @param  {string}  command Command to exectue
  * @param  {boolean} async   Must be async or not
  * @return {array}           Json of the response
@@ -50,12 +50,12 @@ module.exports =
       childProcess.kill()
 
   ###*
-   * Launch the server raxe server to watch
+   * Launch the server lexah server to watch
   ###
   watch: () ->
     for directory in atom.project.getDirectories()
-      @watchDirectoryTarget = "#{directory.path}/.raxecompletion"
-      execute("#{config.config.raxe} -s #{directory.path} -d ./.raxecompletion -w", directory.path, true)
+      @watchDirectoryTarget = "#{directory.path}/.lexahcompletion"
+      execute("#{config.config.lexah} -s #{directory.path} -d ./.lexahcompletion -w", directory.path, true)
 
 
   ###*
@@ -71,7 +71,7 @@ module.exports =
 
     for directory in atom.project.getDirectories()
       newFile = file.replace(directory.path, @watchDirectoryTarget)
-      newFile = newFile.replace(".rx", ".hx")
+      newFile = newFile.replace(".lxa", ".hx")
       newFile = newFile.replace(@watchDirectoryTarget + "/", "")
 
       return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details", @watchDirectoryTarget, false)
