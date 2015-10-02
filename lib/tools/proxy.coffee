@@ -13,6 +13,7 @@ childProcess = null
  * @return {array}           Json of the response
 ###
 execute = (command, cwd, async) ->
+  console.log command
   if not async
     for c in command
       c.replace(/\\/g, '\\\\')
