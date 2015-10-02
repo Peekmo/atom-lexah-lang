@@ -1,7 +1,7 @@
 module.exports =
   class AbstractProvider
-    selector: '.source.rx'
-    disableForSelector: '.source.rx .comment, .source.rx .string'
+    selector: '.source.lxa'
+    disableForSelector: '.source.lxa .comment, .source.lxa .string'
     inclusionPriority: 1
     inProgress: false
 

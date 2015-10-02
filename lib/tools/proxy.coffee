@@ -2,6 +2,7 @@ exec = require "child_process"
 process = require "process"
 config = require "../config.coffee"
 fs = require 'fs'
+bparser = require './build-parser.coffee'
 
 currentProcesses = []
 childProcess = null
@@ -28,6 +29,7 @@ execute = (command, cwd, async) ->
         stdout = exec.spawnSync(cmd, elements, {cwd: cwd}).output[2].toString('ascii')
 
         delete currentProcesses[command]
+        console.log stdout
         return stdout
     catch err
       return []
@@ -56,7 +58,7 @@ module.exports =
   watch: () ->
     for directory in atom.project.getDirectories()
       @watchDirectoryTarget = "#{directory.path}/.lexahcompletion"
-      execute("#{config.config.lexah} -s #{directory.path} -d ./.lexahcompletion -w", directory.path, true)
+      execute("#{config.config.lexah} -s #{directory.path} -d ./.lexahcompletion -w --lexah-only", directory.path, true)
 
 
   ###*
@@ -75,4 +77,6 @@ module.exports =
       newFile = newFile.replace(".lxa", ".hx")
       newFile = newFile.replace(@watchDirectoryTarget + "/", "")
 
-      return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details", @watchDirectoryTarget, false)
+      libs = bparser.getOptions(directory.path).join(" ")
+
+      return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details #{libs}", @watchDirectoryTarget, false)
