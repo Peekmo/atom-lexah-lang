@@ -48,7 +48,7 @@
       '1':
         'name': 'punctuation.definition.constant.hashkey.lexah'
     'comment': 'symbols as hash key (1.9 syntax)'
-    'match': '(?>[a-zA-Z_]\\w*(?>[?!])?)(:)(?!:)'
+    'match': '(?>[\?a-zA-Z_]\\w*(?>[?!])?)(:)(?!:)'
     'name': 'constant.other.symbol.hashkey.lexah'
   }
   {
@@ -80,6 +80,11 @@
     'name': 'keyword.operator.logical.lexah'
   }
   {
+    'comment': 'variables and constants'
+    'match': '\\b(var|const)\\b(?![?!])'
+    'name': 'keyword.control.properties'
+  }
+  {
     'comment': ' just as above but being not a logical operation'
     'match': '(?<!\\.)\\b(alias|alias_method|break|next|redo|retry|return|super|undef|yield)\\b(?![?!])|\\bdefined\\?|\\bblock_given\\?'
     'name': 'keyword.control.pseudo-method.lexah'
@@ -102,7 +107,7 @@
   }
   {
     'comment': ' everything being a method but having a special function is a..'
-    'match': '\\b(initialize|new|var|loop|include|extend|fail|raise|private|module_function|public|override|inline|dynamic|macro|static)\\b(?![?!])'
+    'match': '\\b(initialize|new|loop|include|extend|prepend|fail|raise|private|module_function|public|override|inline|static|macro|dynamic)\\b(?![?!])'
     'name': 'keyword.other.special-method.lexah'
   }
   {
@@ -129,20 +134,6 @@
     'captures':
       '1':
         'name': 'punctuation.definition.variable.lexah'
-    'match': '(@@)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.class.lexah'
-  }
-  {
-    'captures':
-      '1':
-        'name': 'punctuation.definition.variable.lexah'
-    'match': '(\\$)[a-zA-Z_]\\w*'
-    'name': 'variable.other.readwrite.global.lexah'
-  }
-  {
-    'captures':
-      '1':
-        'name': 'punctuation.definition.variable.lexah'
     'match': '(\\$)(!|@|&|`|\'|\\+|\\d+|~|=|/|\\\\|,|;|\\.|<|>|_|\\*|\\$|\\?|:|"|-[0adFiIlpv])'
     'name': 'variable.other.readwrite.global.pre-defined.lexah'
   }
@@ -164,7 +155,7 @@
     'name': 'support.class.lexah'
   }
   {
-    'match': '\\b(abort|at_exit|autoload\\??|binding|callcc|caller|caller_locations|chomp|chop|eval|exec|exit|exit!|fork|format|gets|global_variables|gsub|iterator\\?|lambda|load|local_variables|open|p|print|printf|proc|putc|puts|rand|readline|readlines|select|set_trace_func|sleep|spawn|sprintf|srand|sub|syscall|system|test|trace_var|trap|untrace_var|warn)\\b(?![?!])'
+    'match': '\\b(iterator|lambda|puts)\\b(?![?!])'
     'name': 'support.function.kernel.lexah'
   }
   {
@@ -1885,23 +1876,6 @@
     ]
   }
   {
-    'begin': '(?<=\\{|do|\\{\\s|do\\s)(\\|)'
-    'captures':
-      '1':
-        'name': 'punctuation.separator.variable.lexah'
-    'end': '(\\|)'
-    'patterns': [
-      {
-        'match': '[_a-zA-Z][_a-zA-Z0-9]*'
-        'name': 'variable.other.block.lexah'
-      }
-      {
-        'match': ','
-        'name': 'punctuation.separator.variable.lexah'
-      }
-    ]
-  }
-  {
     'match': '=>'
     'name': 'punctuation.separator.key-value'
   }
@@ -2021,20 +1995,6 @@
             'name': 'punctuation.definition.variable.lexah'
         'match': '(#@)[a-zA-Z_]\\w*'
         'name': 'variable.other.readwrite.instance.lexah'
-      }
-      {
-        'captures':
-          '1':
-            'name': 'punctuation.definition.variable.lexah'
-        'match': '(#@@)[a-zA-Z_]\\w*'
-        'name': 'variable.other.readwrite.class.lexah'
-      }
-      {
-        'captures':
-          '1':
-            'name': 'punctuation.definition.variable.lexah'
-        'match': '(#\\$)[a-zA-Z_]\\w*'
-        'name': 'variable.other.readwrite.global.lexah'
       }
     ]
   'nest_brackets':
@@ -2254,22 +2214,6 @@
         ]
       }
       {
-        'begin': '\\(\\?#'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.comment.begin.lexah'
-        'end': '\\)'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.comment.end.lexah'
-        'name': 'comment.line.number-sign.lexah'
-        'patterns': [
-          {
-            'include': '#escaped_char'
-          }
-        ]
-      }
-      {
         'begin': '\\('
         'captures':
           '0':
@@ -2281,17 +2225,5 @@
             'include': '#regex_sub'
           }
         ]
-      }
-      {
-        'begin': '(?<=^|\\s)(#)\\s(?=[[a-zA-Z0-9,. \\t?!-][^\\x{00}-\\x{7F}]]*$)'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.definition.comment.lexah'
-        'comment': 'We are restrictive in what we allow to go after the comment character to avoid false positives, since the availability of comments depend on regexp flags.'
-        'end': '$\\n?'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.comment.lexah'
-        'name': 'comment.line.number-sign.lexah'
       }
     ]
