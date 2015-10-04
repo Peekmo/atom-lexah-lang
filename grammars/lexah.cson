@@ -90,8 +90,8 @@
     'name': 'keyword.control.pseudo-method.lexah'
   }
   {
-    'match': '\\bnil\\b(?![?!])'
-    'name': 'constant.language.nil.lexah'
+    'match': '\\bnull\\b(?![?!])'
+    'name': 'constant.language.null.lexah'
   }
   {
     'match': '\\b(true|false)\\b(?![?!])'
