@@ -6,6 +6,7 @@ module.exports =
 # Autocomplete for variables in the current function
 class VariableProvider extends AbstractProvider
   variables: []
+  classes: []
 
   ###*
    * Get suggestions from the provider (@see provider-api)
@@ -18,7 +19,10 @@ class VariableProvider extends AbstractProvider
     return unless prefix.length
 
     @variables = parser.getAllVariablesInFunction(editor, bufferPosition)
-    return unless @variables.length
+    @classes = parser.getAllClassesImported(editor, bufferPosition)
+
+    if not @variables.length and not @classes.length
+      return
 
     suggestions = @findSuggestionsForPrefix(prefix.trim())
     return unless suggestions.length
@@ -31,14 +35,14 @@ class VariableProvider extends AbstractProvider
   ###
   findSuggestionsForPrefix: (prefix) ->
     # Filter the words using fuzzaldrin
-    words = fuzzaldrin.filter @variables, prefix
+    words = fuzzaldrin.filter @variables.concat(@classes), prefix
 
     # Builds suggestions for the words
     suggestions = []
     for word in words
       suggestions.push
         text: word,
-        type: 'variable',
+        type: if word in @variables then 'variable' else 'class',
         replacementPrefix: prefix
 
     return suggestions

@@ -33,3 +33,19 @@ module.exports =
         result.push matches[1]
 
     return result
+
+  ###*
+   * Returns all classes imported in the current file
+   *
+   * @return {Array}
+  ###
+  getAllClassesImported: (editor, bufferPosition) ->
+    text = editor.getTextInBufferRange([[0, 0], bufferPosition])
+
+    reg = new RegExp("require [\"\']{1}[\\s]*([a-zA-Z_0-9\./]+)[\\s]*[\"\']{1}", "gm")
+    result = []
+    while matches = reg.exec(text)
+      if matches[1]?
+        result.push matches[1].split("/").pop()
+
+    return result
