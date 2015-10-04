@@ -57,8 +57,16 @@ module.exports =
   ###
   watch: () ->
     for directory in atom.project.getDirectories()
+      bparser.getOptions(directory.path)
+      path = directory.path
+
+      # Adds the cp to the path to watch
+      console.log bparser
+      if bparser.src != ""
+        path = path + "/" + bparser.src
+
       @watchDirectoryTarget = "#{directory.path}/.lexahcompletion"
-      execute("#{config.config.lexah} -s #{directory.path} -d ./.lexahcompletion -w --lexah-only", directory.path, true)
+      execute("#{config.config.lexah} -s #{path} -d ./.lexahcompletion -w --lexah-only", directory.path, true)
 
 
   ###*
@@ -76,6 +84,7 @@ module.exports =
       newFile = file.replace(directory.path, @watchDirectoryTarget)
       newFile = newFile.replace(".lxa", ".hx")
       newFile = newFile.replace(@watchDirectoryTarget + "/", "")
+      newFile = newFile.replace(bparser.src, "")
 
       libs = bparser.getOptions(directory.path).join(" ")
 
