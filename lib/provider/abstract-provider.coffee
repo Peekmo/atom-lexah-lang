@@ -45,7 +45,9 @@ module.exports =
      * @param  {TextEditor} editor
      * @param  {Point}      bufferPosition
     ###
-    insertAutocompleteFragment: (editor, bufferPosition) ->
+    insertAutocompleteFragment: (prefix, editor, bufferPosition) ->
+      fragment = if prefix == "@" then ".|" else "|"
+
       if not @inProgress
         @inProgress = true
         editor.setTextInBufferRange([

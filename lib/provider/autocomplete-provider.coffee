@@ -17,14 +17,20 @@ class AutocompleteProvider extends AbstractProvider
 
     elements = prefix.split(".")
     current = elements.pop()
-    prefix = elements.join(".")
+
+    if current.startsWith("@")
+      current = current.substring(1)
+      prefix = "@"
+    else
+      prefix = elements.join(".")
+      
     suggestions = []
 
     if not @cache[prefix]?
       @cache = {}
 
       if current == ""
-        @insertAutocompleteFragment(editor, bufferPosition)
+        @insertAutocompleteFragment(prefix, editor, bufferPosition)
 
       xml = proxy.fields(editor.buffer.file?.path)
       return unless xml
