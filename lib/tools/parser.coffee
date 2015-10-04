@@ -19,13 +19,14 @@ module.exports =
         row--
         continue
 
+      content = line + '\n' + content
       if line.match(/def[\s]+[a-zA-Z_0-9\.]+[\s]*[\(]/g)
         break
 
       content = line + '\n' + content
       row--
 
-    reg = new RegExp("(?!var)[\\s]+([a-zA-Z_0-9]+)[\\s]*[:=]{1}", "gm")
+    reg = new RegExp("([a-zA-Z_0-9]+)[\\s]*[:=]{1}", "gm")
     result = []
     while matches = reg.exec(content)
       if matches[1]?
