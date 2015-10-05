@@ -84,8 +84,9 @@ module.exports =
       newFile = file.replace(directory.path, @watchDirectoryTarget)
       newFile = newFile.replace(".lxa", ".hx")
       newFile = newFile.replace(@watchDirectoryTarget + "/", "")
-      newFile = newFile.replace(bparser.src, "")
 
       libs = bparser.getOptions(directory.path).join(" ")
+      if bparser.src != ""
+        libs = "#{libs} -cp #{bparser.src}"
 
       return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details #{libs}", @watchDirectoryTarget, false)
