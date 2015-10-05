@@ -1,3 +1,5 @@
+proxy = require "../tools/proxy.coffee"
+
 module.exports =
   class AbstractProvider
     selector: '.source.lxa'
@@ -46,19 +48,12 @@ module.exports =
      * @param  {Point}      bufferPosition
     ###
     insertAutocompleteFragment: (prefix, editor, bufferPosition) ->
-      fragment = if prefix == "@" then ".|" else "|"
-
-      if not @inProgress
-        @inProgress = true
-        editor.setTextInBufferRange([
-          [bufferPosition.row, bufferPosition.column],
-          [bufferPosition.row, bufferPosition.column]
-        ], "|")
-        editor.save()
-        editor.setTextInBufferRange([
-          [bufferPosition.row, bufferPosition.column],
-          [bufferPosition.row, bufferPosition.column + 1]
-        ], "")
-        atom.commands.dispatch(atom.views.getView(editor), 'autocomplete-plus:activate')
-      else
-        @inProgress = false
+      editor.setTextInBufferRange([
+        [bufferPosition.row, bufferPosition.column],
+        [bufferPosition.row, bufferPosition.column]
+      ], "|")
+      editor.save()
+      editor.setTextInBufferRange([
+        [bufferPosition.row, bufferPosition.column],
+        [bufferPosition.row, bufferPosition.column + 1]
+      ], "")

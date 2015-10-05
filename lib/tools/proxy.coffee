@@ -55,18 +55,13 @@ module.exports =
   ###*
    * Launch the server lexah server to watch
   ###
-  watch: () ->
+  generate: () ->
     for directory in atom.project.getDirectories()
       bparser.getOptions(directory.path)
       path = directory.path
 
-      # Adds the cp to the path to watch
-      console.log bparser
-      if bparser.src != ""
-        path = path + "/" + bparser.src
-
       @watchDirectoryTarget = "#{directory.path}/.lexahcompletion"
-      execute("#{config.config.lexah} -s #{path} -d ./.lexahcompletion -w --lexah-only", directory.path, true)
+      execute("#{config.config.lexah} -s #{path} -d ./.lexahcompletion --lexah-only", directory.path)
 
 
   ###*
@@ -78,8 +73,9 @@ module.exports =
   ###
   fields: (file) ->
     if not @watchDirectoryTarget?
-      @watch()
+      @generate()
 
+    @transpile(file)
     for directory in atom.project.getDirectories()
       newFile = file.replace(directory.path, @watchDirectoryTarget)
       newFile = newFile.replace(".lxa", ".hx")
@@ -90,3 +86,11 @@ module.exports =
         libs = "#{libs} -cp #{bparser.src}"
 
       return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details #{libs}", @watchDirectoryTarget, false)
+
+  transpile: (file) ->
+    for directory in atom.project.getDirectories()
+      newFile = file.replace(directory.path, @watchDirectoryTarget)
+      newFile = newFile.replace(".lxa", ".hx")
+      newFile = newFile.replace(@watchDirectoryTarget + "/", "")
+
+      return execute("#{config.config.lexah} --src #{file} --dest #{newFile}", @watchDirectoryTarget, false)

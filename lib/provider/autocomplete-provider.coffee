@@ -10,7 +10,7 @@ class AutocompleteProvider extends AbstractProvider
 
   # Required: Return a promise, an array of suggestions, or null.
   fetchSuggestions: ({editor, bufferPosition, scopeDescriptor, prefix}) ->
-    @regex = /(([^\s=:]+\.)|[@])([a-zA-Z])*/
+    @regex = /(([^\s=:]+\.)|[@])([|a-zA-Z]*)/
 
     prefix = @getPrefix(editor, bufferPosition)
     return unless prefix
@@ -23,14 +23,15 @@ class AutocompleteProvider extends AbstractProvider
       prefix = "@"
     else
       prefix = elements.join(".")
-      
-    suggestions = []
 
+    suggestions = []
     if not @cache[prefix]?
       @cache = {}
 
       if current == ""
         @insertAutocompleteFragment(prefix, editor, bufferPosition)
+
+      @cache[prefix] = {}
 
       xml = proxy.fields(editor.buffer.file?.path)
       return unless xml
@@ -39,7 +40,6 @@ class AutocompleteProvider extends AbstractProvider
         if err? or not result?.list?.i?
           return
 
-        @cache[prefix] = {}
         for item in result.list.i
           if item.$.k == "var"
             @cache[prefix][item.$.n] =
