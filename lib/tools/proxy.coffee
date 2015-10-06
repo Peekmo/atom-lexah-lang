@@ -29,7 +29,7 @@ execute = (command, cwd, async) ->
         stdout = exec.spawnSync(cmd, elements, {cwd: cwd}).output[2].toString('ascii')
 
         delete currentProcesses[command]
-        console.log stdout
+        #console.log stdout
         return stdout
     catch err
       return []
@@ -87,6 +87,11 @@ module.exports =
 
       return execute("#{config.config.haxe} --display #{newFile}@0 -D display-details #{libs}", @watchDirectoryTarget, false)
 
+  ###*
+   * Transpile the given file
+   *
+   * @param  {string} file
+  ###
   transpile: (file) ->
     for directory in atom.project.getDirectories()
       newFile = file.replace(directory.path, @watchDirectoryTarget)

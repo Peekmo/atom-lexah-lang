@@ -47,13 +47,20 @@ module.exports =
      * @param  {TextEditor} editor
      * @param  {Point}      bufferPosition
     ###
-    insertAutocompleteFragment: (prefix, editor, bufferPosition) ->
-      editor.setTextInBufferRange([
-        [bufferPosition.row, bufferPosition.column],
-        [bufferPosition.row, bufferPosition.column]
-      ], "|")
-      editor.save()
-      editor.setTextInBufferRange([
-        [bufferPosition.row, bufferPosition.column],
-        [bufferPosition.row, bufferPosition.column + 1]
-      ], "")
+    insertAutocompleteFragment: (current, editor, bufferPosition) ->
+      if not @inProgress
+        @inProgress = true
+        editor.setTextInBufferRange([
+          [bufferPosition.row, bufferPosition.column - current.length],
+          [bufferPosition.row, bufferPosition.column]
+        ], "|")
+        editor.save()
+        editor.setTextInBufferRange([
+          [bufferPosition.row, bufferPosition.column - current.length],
+          [bufferPosition.row, bufferPosition.column + 1]
+        ], "#{current}")
+
+        # because save stop autocomplete plus on linux at least
+        atom.commands.dispatch(atom.views.getView(editor), 'autocomplete-plus:activate')
+      else
+        @inProgress = false

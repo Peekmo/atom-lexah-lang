@@ -27,10 +27,11 @@ class AutocompleteProvider extends AbstractProvider
     suggestions = []
     if not @cache[prefix]?
       @cache = {}
+      @insertAutocompleteFragment(current, editor, bufferPosition)
 
-      if current == ""
-        @insertAutocompleteFragment(prefix, editor, bufferPosition)
-
+      if @inProgress
+        return []
+        
       @cache[prefix] = {}
 
       xml = proxy.fields(editor.buffer.file?.path)
