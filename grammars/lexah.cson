@@ -1427,23 +1427,23 @@
     'name': 'constant.other.symbol.lexah'
   }
   {
-    'begin': '^[\\s]*--\\*'
+    'begin': '^[\\s]*##\\*'
     'captures':
       '0':
         'name': 'punctuation.definition.comment.lexah'
     'comment': 'multiline comments'
-    'end': '^[\\s]*\\*--'
+    'end': '^[\\s]*\\*##'
     'name': 'comment.block.documentation.lexah'
   }
   {
-    'begin': '(^[ \\t]+)?(?=--)'
+    'begin': '(^[ \\t]+)?(?=##)'
     'beginCaptures':
       '1':
         'name': 'punctuation.whitespace.comment.leading.lexah'
     'end': '(?!\\G)'
     'patterns': [
       {
-        'begin': '--'
+        'begin': '##'
         'beginCaptures':
           '0':
             'name': 'punctuation.definition.comment.lexah'
