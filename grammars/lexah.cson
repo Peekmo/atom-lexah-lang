@@ -1436,6 +1436,15 @@
     'name': 'comment.block.documentation.lexah'
   }
   {
+    'begin': '{{'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.constant.lexah'
+    'comment': 'multiline comments'
+    'end': '}}'
+    'name': 'haxecode.constant.lexah'
+  }
+  {
     'begin': '(^[ \\t]+)?(?=##)'
     'beginCaptures':
       '1':
